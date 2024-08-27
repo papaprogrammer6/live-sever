@@ -1,0 +1,13 @@
+{
+  "name": "streaming-server",
+  "version": "1.0.0",
+  "description": "Node.js streaming server using Node-Media-Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "node-media-server": "^2.3.8",
+    "dotenv": "^10.0.0"
+  }
+}
