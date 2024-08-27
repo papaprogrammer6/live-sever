@@ -1,0 +1,81 @@
+Tue 08/27/2024 18:21:37.94 - Script started with parameter: stop 
+Tue 08/27/2024 18:21:37.95 - Stopping server with PID 1616 ... 
+Tue 08/27/2024 18:21:37.95 - Failed to stop server. It may have already been stopped. 
+Tue 08/27/2024 18:21:38.17 - Script ended 
+Tue 08/27/2024 18:21:53.59 - Script started with parameter: start 
+Tue 08/27/2024 18:21:53.59 - Starting server... 
+Tue 08/27/2024 18:21:53.59 - Changed directory to C:\Users\ayoub\Desktop\again\my-streaming-server\ 
+Tue 08/27/2024 18:21:53.59 - Attempted to start Node.js server 
+Tue 08/27/2024 18:21:53.59 - Server started with PID 7464 
+Tue 08/27/2024 18:21:53.59 - Server started with PID 7464 
+Tue 08/27/2024 18:22:17.86 - Script started with parameter: start 
+Tue 08/27/2024 18:22:17.91 - Starting server... 
+Tue 08/27/2024 18:22:17.91 - Changed directory to C:\Users\ayoub\Desktop\again\my-streaming-server\ 
+Tue 08/27/2024 18:22:17.94 - Starting server... 
+Tue 08/27/2024 18:22:17.94 - Changed directory to C:\Users\ayoub\Desktop\again\my-streaming-server\ 
+Tue 08/27/2024 18:22:17.94 - Attempted to start Node.js server 
+Tue 08/27/2024 18:22:17.91 - Server started with PID 7464 
+Tue 08/27/2024 18:22:17.94 - Server started with PID 7464 
+Tue 08/27/2024 18:22:21.79 - Script started with parameter: start 
+Tue 08/27/2024 18:22:21.79 - Starting server... 
+Tue 08/27/2024 18:22:21.79 - Changed directory to C:\Users\ayoub\Desktop\again\my-streaming-server\ 
+Tue 08/27/2024 18:22:21.79 - Attempted to start Node.js server 
+Tue 08/27/2024 18:22:21.85 - Script started with parameter: start 
+Tue 08/27/2024 18:22:21.86 - Starting server... 
+Tue 08/27/2024 18:22:21.86 - Changed directory to C:\Users\ayoub\Desktop\again\my-streaming-server\ 
+Tue 08/27/2024 18:22:21.86 - Attempted to start Node.js server 
+Tue 08/27/2024 18:22:21.79 - Server started with PID 7464 
+Tue 08/27/2024 18:22:21.86 - Server started with PID 7464 
+Tue 08/27/2024 18:22:35.91 - Script started with parameter: start 
+Tue 08/27/2024 18:22:35.91 - Starting server... 
+Tue 08/27/2024 18:22:35.91 - Changed directory to C:\Users\ayoub\Desktop\again\my-streaming-server\ 
+Tue 08/27/2024 18:22:35.91 - Attempted to start Node.js server 
+Tue 08/27/2024 18:22:35.92 - Server started with PID 7464 
+Tue 08/27/2024 18:22:35.92 - Server started with PID 7464 
+Tue 08/27/2024 18:23:23.80 - Script started with parameter: start 
+Tue 08/27/2024 18:23:23.81 - Starting server... 
+Tue 08/27/2024 18:23:23.81 - Changed directory to C:\Users\ayoub\Desktop\again\my-streaming-server\ 
+Tue 08/27/2024 18:23:23.81 - Attempted to start Node.js server 
+Tue 08/27/2024 18:23:25.61 - Script started with parameter: start 
+Tue 08/27/2024 18:23:25.64 - Starting server... 
+Tue 08/27/2024 18:23:25.64 - Changed directory to C:\Users\ayoub\Desktop\again\my-streaming-server\ 
+Tue 08/27/2024 18:23:25.64 - Attempted to start Node.js server 
+Tue 08/27/2024 18:23:25.64 - Server started with PID 7464 
+Tue 08/27/2024 18:24:15.98 - Script started with parameter: start 
+Tue 08/27/2024 18:24:15.98 - Starting server... 
+Tue 08/27/2024 18:24:16.00 - Attempted to start Node.js server 
+Tue 08/27/2024 18:24:15.98 - Server started with PID 7464 
+Tue 08/27/2024 18:24:16.00 - Server started with PID 7464 
+Tue 08/27/2024 19:05:01.40 - Script started with parameter: start 
+Tue 08/27/2024 19:05:01.40 - Starting server... 
+Tue 08/27/2024 19:05:01.40 - Changed directory to C:\Users\ayoub\Desktop\again\my-streaming-server\ 
+Tue 08/27/2024 19:05:01.40 - Attempted to start Node.js server 
+Tue 08/27/2024 19:05:01.40 - Server started with PID 14100 
+Tue 08/27/2024 19:05:01.40 - Server started with PID 14100 
+Tue 08/27/2024 19:05:12.93 - Script started with parameter: start 
+Tue 08/27/2024 19:05:12.93 - Starting server... 
+Tue 08/27/2024 19:05:12.93 - Changed directory to C:\Users\ayoub\Desktop\again\my-streaming-server\ 
+Tue 08/27/2024 19:05:12.93 - Attempted to start Node.js server 
+Tue 08/27/2024 19:05:12.98 - Server started with PID 14100 
+Tue 08/27/2024 19:05:12.93 - Server started with PID 14100 
+Tue 08/27/2024 19:05:15.76 - Script started with parameter: start 
+Tue 08/27/2024 19:05:15.76 - Starting server... 
+Tue 08/27/2024 19:05:15.76 - Changed directory to C:\Users\ayoub\Desktop\again\my-streaming-server\ 
+Tue 08/27/2024 19:05:15.76 - Attempted to start Node.js server 
+Tue 08/27/2024 19:05:15.82 - Server started with PID 14100 
+Tue 08/27/2024 19:05:15.76 - Server started with PID 14100 
+Tue 08/27/2024 19:05:34.76 - Script started with parameter: start 
+Tue 08/27/2024 19:05:34.81 - Starting server... 
+Tue 08/27/2024 19:05:34.81 - Changed directory to C:\Users\ayoub\Desktop\again\my-streaming-server\ 
+Tue 08/27/2024 19:05:34.90 - Script started with parameter: start 
+Tue 08/27/2024 19:05:34.92 - Starting server... 
+Tue 08/27/2024 19:05:34.92 - Changed directory to C:\Users\ayoub\Desktop\again\my-streaming-server\ 
+Tue 08/27/2024 19:05:34.92 - Attempted to start Node.js server 
+Tue 08/27/2024 19:05:34.81 - Server started with PID 14100 
+Tue 08/27/2024 19:05:34.92 - Server started with PID 14100 
+Tue 08/27/2024 19:51:20.12 - Script started with parameter: start 
+Tue 08/27/2024 19:51:20.14 - Starting server... 
+Tue 08/27/2024 19:51:20.14 - Changed directory to C:\Users\ayoub\Desktop\again\my-streaming-server\ 
+Tue 08/27/2024 19:51:20.14 - Attempted to start Node.js server 
+Tue 08/27/2024 19:51:20.12 - Server started with PID 6652 
+Tue 08/27/2024 19:51:20.14 - Server started with PID 6652 
