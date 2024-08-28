@@ -56,11 +56,12 @@
     <script>
         const videoElement = document.getElementById('videoElement');
         const offlineMessage = document.getElementById('offlineMessage');
-        const streamUrl = 'https://live-sever-five.vercel.app/live/mystream.flv';
+        // Change the URL to use HTTPS
+        const streamUrl = 'https://live-sever.onrender.com/live/mystream.flv';
         const checkInterval = 5000; // Check every 5 seconds
 
         function checkStreamAvailability() {
-            return fetch(streamUrl, { method: 'HEAD' })  // Changed to HEAD method
+            return fetch(streamUrl, { method: 'HEAD' })
                 .then(response => response.ok)
                 .catch(() => false);
         }
