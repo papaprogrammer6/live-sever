@@ -56,13 +56,18 @@
     <script>
         const videoElement = document.getElementById('videoElement');
         const offlineMessage = document.getElementById('offlineMessage');
-        const streamUrl = 'https://live-sever-five.vercel.app/live/mystream.flv';
+        const streamUrl = 'https://live-sever-five.vercel.app/live/mystream.flv'; // Update with your actual stream URL
         const checkInterval = 5000; // Check every 5 seconds
 
-        function checkStreamAvailability() {
-            return fetch(streamUrl, { method: 'HEAD' })
-                .then(response => response.ok)
-                .catch(() => false);
+        async function checkStreamAvailability() {
+            try {
+                const response = await fetch(streamUrl, { method: 'HEAD' });
+                console.log('Stream check response:', response.status);
+                return response.ok;
+            } catch (error) {
+                console.error('Error checking stream availability:', error);
+                return false;
+            }
         }
 
         function startLiveStream() {
@@ -73,10 +78,9 @@
                     isLive: true,
                     hasAudio: true,
                     hasVideo: true,
-                    enableStashBuffer: true, // Set this to true to enable buffering
-                    stashInitialSize: 384, // Increase the initial buffer size
+                    enableStashBuffer: true,
+                    stashInitialSize: 384,
                 });
-
 
                 flvPlayer.attachMediaElement(videoElement);
                 flvPlayer.load();
@@ -95,6 +99,7 @@
                     showOfflineMessage();
                 });
             } else {
+                console.error('FLV.js is not supported');
                 showOfflineMessage(); // Show offline message if flvjs is not supported
             }
         }
@@ -112,6 +117,7 @@
             if (isAvailable) {
                 startLiveStream();
             } else {
+                console.log('Stream is not available');
                 showOfflineMessage();
             }
         }
