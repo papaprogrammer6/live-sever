@@ -59,15 +59,10 @@
         const streamUrl = 'https://live-sever-five.vercel.app/live/mystream.flv';
         const checkInterval = 5000; // Check every 5 seconds
 
-        async function checkStreamAvailability() {
-            try {
-                const response = await fetch(streamUrl, { method: 'HEAD' });
-                console.log('Stream check response:', response.status);
-                return response.ok;
-            } catch (error) {
-                console.error('Error checking stream availability:', error);
-                return false;
-            }
+        function checkStreamAvailability() {
+            return fetch(streamUrl, { method: 'GET' })  // Changed to GET method
+                .then(response => response.ok)
+                .catch(() => false);
         }
 
         function startLiveStream() {
@@ -78,8 +73,8 @@
                     isLive: true,
                     hasAudio: true,
                     hasVideo: true,
-                    enableStashBuffer: true,
-                    stashInitialSize: 384,
+                    enableStashBuffer: true, // Set this to true to enable buffering
+                    stashInitialSize: 384, // Increase the initial buffer size
                 });
 
                 flvPlayer.attachMediaElement(videoElement);
@@ -99,7 +94,6 @@
                     showOfflineMessage();
                 });
             } else {
-                console.error('FLV.js is not supported');
                 showOfflineMessage(); // Show offline message if flvjs is not supported
             }
         }
@@ -117,7 +111,6 @@
             if (isAvailable) {
                 startLiveStream();
             } else {
-                console.log('Stream is not available');
                 showOfflineMessage();
             }
         }
