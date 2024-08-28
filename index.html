@@ -15,6 +15,7 @@
             align-items: center;
             height: 100vh;
             background-color: #333;
+            font-family: "Poppins", sans-serif;
         }
 
         .vid-content {
@@ -29,9 +30,7 @@
             background-color: #000;
         }
 
-        #offlineMessage {
-            display: none; /* Hide initially */
-            font-family: "Poppins", sans-serif;
+        #messageOverlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -41,92 +40,97 @@
             justify-content: center;
             align-items: center;
             color: white;
-            background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
-            font-size: 24px;
+            background-color: rgba(0, 0, 0, 0.7);
+            font-size: 18px;
             text-align: center;
+        }
+
+        #controls {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            font-family: "Poppins", sans-serif;
         }
     </style>
 </head>
 <body>
     <div class="vid-content">
-        <video autoplay id="videoElement"></video>
-        <div id="offlineMessage">Offline</div>
+        <video id="videoElement"></video>
+        <div id="messageOverlay">Initializing...</div>
+    </div>
+    <div id="controls">
+        <button id="startButton">Start Stream</button>
+        <button id="stopButton">Stop Stream</button>
     </div>
 
     <script>
         const videoElement = document.getElementById('videoElement');
-        const offlineMessage = document.getElementById('offlineMessage');
+        const messageOverlay = document.getElementById('messageOverlay');
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
         const streamUrl = 'https://live-sever-five.vercel.app/live/mystream.flv';
-        const checkInterval = 5000; // Check every 5 seconds
+        let flvPlayer = null;
 
-        function checkStreamAvailability() {
-            return fetch(streamUrl, { method: 'HEAD' })  // Changed to GET method
-                .then(response => response.ok)
-                .catch(() => false);
+        function showMessage(message) {
+            messageOverlay.textContent = message;
+            messageOverlay.style.display = 'flex';
+        }
+
+        function hideMessage() {
+            messageOverlay.style.display = 'none';
         }
 
         function startLiveStream() {
             if (flvjs.isSupported()) {
-                const flvPlayer = flvjs.createPlayer({
+                flvPlayer = flvjs.createPlayer({
                     type: 'flv',
                     url: streamUrl,
-                    isLive: true,
-                    hasAudio: true,
-                    hasVideo: true,
-                    enableStashBuffer: true, // Set this to true to enable buffering
-                    stashInitialSize: 384, // Increase the initial buffer size
+                    isLive: true
                 });
 
                 flvPlayer.attachMediaElement(videoElement);
                 flvPlayer.load();
+                flvPlayer.play();
 
-                flvPlayer.on(flvjs.Events.ERROR, () => {
-                    console.error('FLV player error');
-                    showOfflineMessage();
-                    flvPlayer.destroy();
+                flvPlayer.on(flvjs.Events.ERROR, (errorType, errorDetail) => {
+                    console.error('FLV player error:', errorType, errorDetail);
+                    showMessage(`Stream error: ${errorType}`);
                 });
 
-                videoElement.addEventListener('canplay', () => {
-                    hideOfflineMessage();
-                });
-
-                videoElement.addEventListener('ended', () => {
-                    showOfflineMessage();
+                videoElement.addEventListener('canplay', hideMessage);
+                videoElement.addEventListener('error', (e) => {
+                    showMessage(`Video error: ${e.message}`);
                 });
             } else {
-                showOfflineMessage(); // Show offline message if flvjs is not supported
+                showMessage('FLV playback is not supported in your browser');
             }
         }
 
-        function showOfflineMessage() {
-            offlineMessage.style.display = 'flex'; // Show offline message
-        }
-
-        function hideOfflineMessage() {
-            offlineMessage.style.display = 'none'; // Hide offline message
-        }
-
-        async function initializeStream() {
-            const isAvailable = await checkStreamAvailability();
-            if (isAvailable) {
-                startLiveStream();
-            } else {
-                showOfflineMessage();
+        function stopLiveStream() {
+            if (flvPlayer) {
+                flvPlayer.pause();
+                flvPlayer.unload();
+                flvPlayer.detachMediaElement();
+                flvPlayer.destroy();
+                flvPlayer = null;
+                showMessage('Stream stopped');
             }
         }
 
-        function checkAndReload() {
-            setInterval(async () => {
-                const isAvailable = await checkStreamAvailability();
-                if (!isAvailable) {
-                    console.log('Stream is down, reloading the page...');
-                    location.reload();
-                }
-            }, checkInterval);
-        }
+        startButton.addEventListener('click', () => {
+            showMessage('Connecting to stream...');
+            startLiveStream();
+        });
 
-        initializeStream();
-        checkAndReload();
+        stopButton.addEventListener('click', stopLiveStream);
+
+        // Initial stream start
+        startLiveStream();
     </script>
 </body>
 </html>
