@@ -32,7 +32,5 @@ if (process.env.FFMPEG_PATH) {
 var nms = new NodeMediaServer(config)
 nms.run();
 
-console.log(`Streaming server running on rtmp://live-sever.onrender.com:${config.rtmp.port}`);
-console.log(`HLS stream available at http://live-sever.onrender.com:${config.http.port}/live/mystream.m3u8`);
-
-
+console.log(`Streaming server running on rtmp://${process.env.HOST}:${config.rtmp.port}`);
+console.log(`HLS stream available at http://${process.env.HOST}:${config.http.port}/live/mystream.m3u8`);
