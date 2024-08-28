@@ -60,7 +60,7 @@
         const checkInterval = 5000; // Check every 5 seconds
 
         function checkStreamAvailability() {
-            return fetch(streamUrl, { method: 'GET' })  // Changed to GET method
+            return fetch(streamUrl, { method: 'HEAD' })  // Changed to HEAD method
                 .then(response => response.ok)
                 .catch(() => false);
         }
